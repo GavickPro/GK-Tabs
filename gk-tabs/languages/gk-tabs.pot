@@ -1,0 +1,202 @@
+# GK Tabs translation file
+# Copyright (C) 2013 GavickPro
+# This file is distributed under the same license as the PACKAGE package.
+# GavickPro <info@gavick.com>, 2013.
+#
+#, fuzzy
+msgid   ""
+msgstr  "Project-Id-Version: 1.0\n"
+        "Report-Msgid-Bugs-To: \n"
+        "POT-Creation-Date: 2013-09-26 16:00+0200\n"
+        "PO-Revision-Date: 2013-09-26 16:00+0200\n"
+        "Last-Translator: GavickPro <info@gavick.com>\n"
+        "Language-Team: en_US <en_US@li.org>\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=CHARSET\n"
+        "Content-Transfer-Encoding: 8bit\n"
+
+#: gk-tabs.php:683
+msgid   "Amount of sidebars:"
+msgstr  ""
+
+#: gk-tabs.php:678
+msgid   "Animation interval (ms):"
+msgstr  ""
+
+#: gk-tabs.php:673
+msgid   "Animation speed (ms):"
+msgstr  ""
+
+#: gk-tabs.php:655
+msgid   "Auto animation:"
+msgstr  ""
+
+#: gk-tabs.php:650
+msgid   "Bottom"
+msgstr  ""
+
+#: gk-tabs.php:690
+msgid   "Cache disabled"
+msgstr  ""
+
+#: gk-tabs.php:688
+msgid   "Cache: "
+msgstr  ""
+
+#: gk-tabs.php:622
+msgid   "Click"
+msgstr  ""
+
+#: gk-tabs.php:632 gk-tabs.php:641 gk-tabs.php:659 gk-tabs.php:668
+msgid   "Disabled"
+msgstr  ""
+
+#: gk-tabs.php:631 gk-tabs.php:640 gk-tabs.php:658 gk-tabs.php:667
+msgid   "Enabled"
+msgstr  ""
+
+#: gk-tabs.php:614
+msgid   "First tab:"
+msgstr  ""
+
+#: gk-tabs.php:116
+msgid   "GK Tabs"
+msgstr  ""
+
+#: gk-tabs.php:623
+msgid   "Hover"
+msgstr  ""
+
+#: gk-tabs.php:485
+msgid   "It seems that you want to do something very bad ;)"
+msgstr  ""
+
+#: gk-tabs.php:637
+msgid   "Navigation buttons:"
+msgstr  ""
+
+#: gk-tabs.php:410
+msgid   "No title specified!"
+msgstr  ""
+
+#: gk-tabs.php:592 gk-tabs.php:606
+msgid   "None"
+msgstr  ""
+
+#: gk-tabs.php:692
+msgid   "Only tabs content"
+msgstr  ""
+
+#: gk-tabs.php:603
+msgid   "Specify the sidebar which will be source of the tabs. The widget "
+        "will receive the widget title as a tabs name and content of the "
+        "widget as a tabs content."
+msgstr  ""
+
+#: gk-tabs.php:567
+msgid   "Specify the title of the widget - leave blank to avoid this element."
+msgstr  ""
+
+#: gk-tabs.php:572
+msgid   "Specify the widget style. You can add your own styles in the styles "
+        "directory."
+msgstr  ""
+
+#: gk-tabs.php:614
+msgid   "Specify which tab will be selected as first."
+msgstr  ""
+
+#: gk-tabs.php:664
+msgid   "Stop on hover:"
+msgstr  ""
+
+#: gk-tabs.php:572
+msgid   "Style:"
+msgstr  ""
+
+#: gk-tabs.php:628
+msgid   "Swipe gesture:"
+msgstr  ""
+
+#: gk-tabs.php:619
+msgid   "Tabs activator event:"
+msgstr  ""
+
+#: gk-tabs.php:646
+msgid   "Tabs position:"
+msgstr  ""
+
+#: gk-tabs.php:603
+msgid   "Tabs source:"
+msgstr  ""
+
+#: gk-tabs.php:485
+msgid   "Tip: recursion is very dangerous - please change the source of tabs "
+        "for this widget."
+msgstr  ""
+
+#: gk-tabs.php:567
+msgid   "Title:"
+msgstr  ""
+
+#: gk-tabs.php:649
+msgid   "Top"
+msgstr  ""
+
+#: gk-tabs.php:119
+msgid   "Use this widget to show tabs created form the selected sidebar"
+msgstr  ""
+
+#: gk-tabs.php:691
+msgid   "Whole widget"
+msgstr  ""
+
+#: gk-tabs.php:655
+msgid   "You can enable auto animation of the tabs."
+msgstr  ""
+
+#: gk-tabs.php:664
+msgid   "You can enable function which will stop the auto animation when user "
+        "hovers the tabs content."
+msgstr  ""
+
+#: gk-tabs.php:628
+msgid   "You can enable swipe gesture for tabs navigation on the touch "
+        "devices."
+msgstr  ""
+
+#: gk-tabs.php:637
+msgid   "You can enable the additional navigation buttons."
+msgstr  ""
+
+#: gk-tabs.php:688
+msgid   "You can enable the widget cache. You can specify the cache time (in "
+        "minutes) and the content to cache - whole widget or only the "
+        "generated content"
+msgstr  ""
+
+#: gk-tabs.php:683
+msgid   "You can specify how many sidebars will be added by this widget. "
+        "These sidebars are very useful, because they won't be displayed in "
+        "your theme."
+msgstr  ""
+
+#: gk-tabs.php:673
+msgid   "You can specify the animation speed in miliseconds."
+msgstr  ""
+
+#: gk-tabs.php:678
+msgid   "You can specify the interval between slides on auto animation effect."
+msgstr  ""
+
+#: gk-tabs.php:646
+msgid   "You can specify the position of the tabs."
+msgstr  ""
+
+#: gk-tabs.php:619
+msgid   "You can specify which event will be used to change tabs."
+msgstr  ""
+
+#: gk-tabs.php:472
+msgid   "You didn't selected any tabs source :("
+msgstr  ""

@@ -1,0 +1,186 @@
+/*
+Name: Rounded style
+*/
+
+/*
+
+Copyright 2013-2013 GavickPro (info@gavick.com)
+
+this program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as 
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+*/
+
+.gk-tabs {
+	position: relative;
+}
+
+/*
+ * Default style
+ */
+.rounded-style .gk-tabs-wrap {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+	     -o-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+}
+.rounded-style .gk-tabs-wrap > ol {
+	margin: 0!important;
+	min-height: 38px;
+	padding: 0 10px;
+}
+.rounded-style .gk-tabs-wrap > ol li {
+	background: #9cf;
+	border: none;
+	-webkit-border-radius: 15px;
+	   -moz-border-radius: 15px;
+	        border-radius: 15px;
+	color: #fff;
+	cursor: pointer;
+	float: left;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 31px;
+	list-style-type: none;
+	margin: 0 10px 0 0;
+	height: 30px;
+	padding: 0 15px;
+	text-align: center;
+	-webkit-transition: all .3s ease-out;
+	   -moz-transition: all .3s ease-out;
+	    -ms-transition: all .3s ease-out;
+	     -o-transition: all .3s ease-out;
+	        transition: all .3s ease-out;
+}
+.rounded-style .gk-tabs-wrap > ol > li:hover,
+.rounded-style .gk-tabs-wrap > ol > li.active,
+.rounded-style .gk-tabs-wrap > ol > li.active:hover{
+	background: #59d;
+}
+.rounded-style .gk-tabs-container {
+	clear: both;
+	overflow: hidden;
+	position: relative;
+}
+.rounded-style .gk-tabs-item {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	    -ms-box-sizing: border-box;
+	     -o-box-sizing: border-box;
+	        box-sizing: border-box;
+	left: -9999px;
+	overflow: hidden;
+	padding: 30px 10px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.rounded-style .gk-tabs-item .box {
+	margin-bottom: 0!important;
+}
+.rounded-style .gk-tabs-item.active {
+	left: 0;
+	position: relative;
+	z-index: 2;
+}
+.rounded-style .gk-tabs-prev,
+.rounded-style .gk-tabs-next {
+	background: #9cf;
+	border: none;
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	height: 24px;
+	font-family: Verdana;
+	font-size: 18px;
+	font-weight: bold;
+	left: -13px;
+	line-height: 23px;
+	margin-top: -13px;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	-webkit-transition: all .3s ease-out;
+	   -moz-transition: all .3s ease-out;
+ 	    -ms-transition: all .3s ease-out;
+	     -o-transition: all .3s ease-out;
+	        transition: all .3s ease-out;
+	width: 24px;
+	z-index: 10;
+}
+.rounded-style.gk-tabs-bottom .gk-tabs-prev,
+.rounded-style.gk-tabs-bottom .gk-tabs-next {
+	margin-top: -34px; /* -13 - (0.5 * tab height) */
+}
+.rounded-style .gk-tabs-next {
+	left: auto;
+	right: -13px;
+}
+.rounded-style .gk-tabs-prev:hover,
+.rounded-style .gk-tabs-next:hover {
+	background: #59d;
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+	.rounded-style .gk-tabs-wrap > ol.gk-tabs-nav > li,
+	.rounded-style .gk-tabs-wrap > ol.gk-tabs-nav > li.active, 
+	.rounded-style .gk-tabs-wrap > ol.gk-tabs-nav > li.active:hover {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		border: 1px solid #e5e5e5!important;
+		border-right: none!important;
+		border-top: none!important;
+		margin-bottom: 8px;
+		width: 100%;
+	}
+
+	.rounded-style .gk-tabs-prev,
+	.rounded-style .gk-tabs-next {
+		display: none;
+	}
+}
+
+/**
+ *
+ * The common part
+ *
+ **/
+
+/* Errors */
+.gk-tabs-error {
+	color: #555;
+	font-size: 16px;
+	padding: 32px 16px;
+	text-align: center;
+}
+
+.gk-tabs-error > strong {
+	color: #d44;
+	display: block;
+	font-family: Verdana, sans-serif;
+	font-size: 100px;
+	font-weight: bold;
+	line-height: 100px;
+}
+
+.gk-tabs-error > small {
+	font-size: 11px;
+}
