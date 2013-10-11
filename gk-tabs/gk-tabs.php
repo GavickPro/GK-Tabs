@@ -97,6 +97,7 @@ class GK_Tabs_Widget extends WP_Widget {
 								'stop_on_hover'			=> 'off',
 								'anim_speed' 			=> '500',
 								'anim_interval' 		=> '5000',
+								'anim_type'				=> 'opacity',
 								'amount_of_sidebars' 	=> '3',
 								'style'					=> 'default-style',
 								'cache'					=> 'none',
@@ -329,6 +330,7 @@ class GK_Tabs_Widget extends WP_Widget {
 						data-speed="'.$this->config['anim_speed'].'" 
 						data-interval="'.$this->config['anim_interval'].'"
 						data-active="'.($first_tab - 1).'"
+						data-anim="'.$this->config['anim_type'].'"
 					>';
 				do_action('gk_tabs_before_tabs_wrapper');
 				echo '<div class="gk-tabs-wrap">';
@@ -677,6 +679,18 @@ class GK_Tabs_Widget extends WP_Widget {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'anim_interval' ) ); ?>" title="<?php _e('You can specify the interval between slides on auto animation effect.', 'gk-tabs'); ?>"><?php _e( 'Animation interval (ms):', 'gk-tabs' ); ?></label>
 				<input class="gk-small" id="<?php echo esc_attr( $this->get_field_id( 'anim_interval' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'anim_interval' ) ); ?>" type="text" value="<?php echo esc_attr( $this->config['anim_interval'] ); ?>" />
+			</p>
+
+			<p>
+				<label for="<?php echo esc_attr($this->get_field_id('anim_type')); ?>" title="<?php _e('You can select the animation type', 'gk-tabs'); ?>"><?php _e('Animation type:', 'gk-tabs'); ?></label>
+				
+				<select id="<?php echo esc_attr( $this->get_field_id('anim_type')); ?>" name="<?php echo esc_attr( $this->get_field_name('anim_type')); ?>">
+					<option value="opacity"<?php selected($this->config['anim_type'], 'opacity'); ?>><?php _e('Opacity', 'gk-tabs'); ?></option>
+					<option value="scale-up"<?php selected($this->config['anim_type'], 'scale-up'); ?>><?php _e('Scale up', 'gk-tabs'); ?></option>
+					<option value="scale-down"<?php selected($this->config['anim_type'], 'scale-down'); ?>><?php _e('Scale down', 'gk-tabs'); ?></option>
+					<option value="rotate-x"<?php selected($this->config['anim_type'], 'rotate-x'); ?>><?php _e('Rotate X', 'gk-tabs'); ?></option>
+					<option value="rotate-y"<?php selected($this->config['anim_type'], 'rotate-y'); ?>><?php _e('Rotate Y', 'gk-tabs'); ?></option>
+				</select>
 			</p>
 			
 			<p>

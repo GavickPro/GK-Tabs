@@ -181,7 +181,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	padding: 32px 16px;
 	text-align: center;
 }
-
 .gk-tabs-error > strong {
 	color: #d44;
 	display: block;
@@ -190,7 +189,71 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	font-weight: bold;
 	line-height: 100px;
 }
-
 .gk-tabs-error > small {
 	font-size: 11px;
+}
+/* Animations */
+.gk-tabs-item {
+	-webkit-transition: all .5s ease-out;
+	-moz-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	-o-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+.gk-tabs[data-anim="scale-up"] .gk-tabs-item {
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	-ms-transform: scale(1.25);
+	-o-transform: scale(1.25);
+	transform: scale(1.25);
+}
+.gk-tabs[data-anim="scale-down"] .gk-tabs-item {
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	-ms-transform: scale(0.75);
+	-o-transform: scale(0.75);
+	transform: scale(0.75);
+}
+.gk-tabs[data-anim="rotate-y"],
+.gk-tabs[data-anim="rotate-x"] {
+	-webkit-perspective: 1200;
+	-moz-perspective: 1200;
+	-ms-perspective: 1200;
+	perspective: 1200;
+}
+.gk-tabs[data-anim="rotate-y"] .gk-tabs-item {
+	-webkit-transform: rotateY(90deg);
+	-moz-transform: rotateY(90deg);
+	-ms-transform: rotateY(90deg);
+	-o-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+}
+.gk-tabs[data-anim="rotate-x"] .gk-tabs-item {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+.gk-tabs[data-anim="scale-up"] .gk-tabs-item.active,
+.gk-tabs[data-anim="scale-down"] .gk-tabs-item.active  {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+.gk-tabs[data-anim="rotate-y"] .gk-tabs-item.active {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+.gk-tabs[data-anim="rotate-x"] .gk-tabs-item.active {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	transform: rotateX(0deg);
 }
