@@ -61,7 +61,7 @@ load_plugin_textdomain( 'gk-tabs', false, dirname( dirname( plugin_basename( __F
  *  wiget initialization and adding additional sidebars
  */
 add_action( 'widgets_init', 'gk_tabs_register' );
-add_action( 'wp_loaded', array('GK_Tabs_Widget', 'register_sidebars'));
+add_action( 'wp_loaded', array('Gk_Tabs_Widget', 'register_sidebars'));
 
 /**
  * Register the GK Tabs Widget.
@@ -69,21 +69,21 @@ add_action( 'wp_loaded', array('GK_Tabs_Widget', 'register_sidebars'));
  * Hooks into the widgets_init action.
  */
 function gk_tabs_register() {
-	register_widget( 'GK_Tabs_Widget' );
+	register_widget( 'Gk_Tabs_Widget' );
 }
 
 /**
  * install & uninstall
  */
-register_activation_hook( __FILE__, array( 'GK_Tabs_Widget', 'install' ) );
-register_deactivation_hook( __FILE__, array( 'GK_Tabs_Widget', 'uninstall' ) );
+register_activation_hook( __FILE__, array( 'Gk_Tabs_Widget', 'install' ) );
+register_deactivation_hook( __FILE__, array( 'Gk_Tabs_Widget', 'uninstall' ) );
 
 /**
  *
  * Main widget class
  *
  */
-class GK_Tabs_Widget extends WP_Widget {
+class Gk_Tabs_Widget extends WP_Widget {
 	// storage of the widget settings with default values
 	private $config = array(
 								'title' 				=> '',
@@ -114,7 +114,7 @@ class GK_Tabs_Widget extends WP_Widget {
 	function __construct() {
 		$this->WP_Widget(
 			'gk_tabs', 
-			__( 'GK Tabs', 'gk-tabs' ), 
+			__( 'Tabs by GavickPro', 'gk-tabs' ), 
 			array( 
 				'classname' => 'widget_gk_tabs', 
 				'description' => __( 'Use this widget to show tabs created form the selected sidebar', 'gk-tabs') 
@@ -227,7 +227,7 @@ class GK_Tabs_Widget extends WP_Widget {
 		for($i = 1; $i <= $amount_of_sidebars; $i++) {
 			register_sidebar(
 				array(
-					'name'          => 'GK Tabs ' . GK_Tabs_Widget::roman_number($i),
+					'name'          => 'GK Tabs ' . Gk_Tabs_Widget::roman_number($i),
 					'id'            => 'gk-tabs-sidebar-' . $i,
 					'description'   => '',
 			        'class'         => '',
@@ -249,7 +249,7 @@ class GK_Tabs_Widget extends WP_Widget {
 	 * @return void
 	 *
 	 **/
-	function widget($args, $instance) {		
+	function widget($args, $instance) {	
 		global $wp_registered_widgets;
 		global $wp_registered_sidebars;
 		// check the ID
