@@ -44,13 +44,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
             var blank = false;
             var falsy_click = false;
             var tabs_h = [];
-            //
-            jQuery(tabs).css('opacity', 0);
-            jQuery(tabs[active_tab]).css({
-                'opacity': '1',
-                'position': 'relative',
-                'z-index': 2
-            });
 
             jQuery(tabs).each(function (i, item) {
                 tabs_h[i] = jQuery(item).outerHeight();
@@ -69,15 +62,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                         }
 
                         tabs_wrapper.css('height', tabs_wrapper.outerHeight() + 'px');
-
-                        var previous_tab_animation = {
-                            'opacity': 0
-                        };
-                        var current_tab_animation = {
-                            'opacity': 1
-                        };
                         //
-                        jQuery(tabs[previous_tab]).animate(previous_tab_animation, animation_speed / 2, function () {
+                        setTimeout(function () {
                             jQuery(tabs[previous_tab]).css({
                                 'position': 'absolute',
                                 'top': '0',
@@ -92,19 +78,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                             jQuery(tabs[previous_tab]).removeClass('active');
                             jQuery(tabs[current_tab]).addClass('active');
 
-                            tabs_wrapper.animate({
+                            tabs_wrapper.animate(
+                                {
                                     "height": tabs_h[i]
                                 },
                                 animation_speed / 2,
                                 function () {
                                     tabs_wrapper.css('height', 'auto');
-                                });
-                            //
-                            setTimeout(function () {
-                                // anim
-                                jQuery(tabs[current_tab]).animate(current_tab_animation, animation_speed);
-                            }, animation_speed / 2);
-                        });
+                                }
+                            );
+                        }, animation_speed / 2);
                         // common operations for both types of animation
                         if (!falsy_click) {
                             blank = true;
