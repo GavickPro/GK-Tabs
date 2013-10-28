@@ -21,11 +21,11 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
-(function () {
+(function() {
     "use strict";
 
-    jQuery(window).load(function () {
-        jQuery(document).find('.gk-tabs').each(function (i, el) {
+    jQuery(window).load(function() {
+        jQuery(document).find('.gk-tabs').each(function(i, el) {
             el = jQuery(el);
             var animation_speed = el.attr('data-speed') * 1.0;
             var animation_interval = el.attr('data-interval') * 1.0;
@@ -45,14 +45,14 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
             var falsy_click = false;
             var tabs_h = [];
 
-            jQuery(tabs).each(function (i, item) {
+            jQuery(tabs).each(function(i, item) {
                 tabs_h[i] = jQuery(item).outerHeight();
             });
 
             // add events to tabs
-            items.each(function (i, item) {
+            items.each(function(i, item) {
                 item = jQuery(item);
-                item.bind(eventActivator, function () {
+                item.bind(eventActivator, function() {
                     if (i !== current_tab) {
                         previous_tab = current_tab;
                         current_tab = i;
@@ -63,7 +63,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
                         tabs_wrapper.css('height', tabs_wrapper.outerHeight() + 'px');
                         //
-                        setTimeout(function () {
+                        setTimeout(function() {
                             jQuery(tabs[previous_tab]).css({
                                 'position': 'absolute',
                                 'top': '0',
@@ -78,12 +78,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                             jQuery(tabs[previous_tab]).removeClass('active');
                             jQuery(tabs[current_tab]).addClass('active');
 
-                            tabs_wrapper.animate(
-                                {
+                            tabs_wrapper.animate({
                                     "height": tabs_h[i]
                                 },
                                 animation_speed / 2,
-                                function () {
+                                function() {
                                     tabs_wrapper.css('height', 'auto');
                                 }
                             );
@@ -101,17 +100,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
             });
             // stop on hover
             if (stoponhover === 'on') {
-                tabs_wrapper.mouseenter(function () {
+                tabs_wrapper.mouseenter(function() {
                     hoverstate = true;
                 });
 
-                tabs_wrapper.mouseleave(function () {
+                tabs_wrapper.mouseleave(function() {
                     hoverstate = false;
                 });
             }
             // auto-animation
             if (autoanim === 'on') {
-                setInterval(function () {
+                setInterval(function() {
                     if (!blank && !hoverstate) {
                         falsy_click = true;
                         var next = current_tab < amount - 1 ? current_tab + 1 : 0;
@@ -123,13 +122,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
             }
             // navigation buttons
             if (el.find('.gk-tabs-prev').length) {
-                el.find('.gk-tabs-prev').click(function () {
+                el.find('.gk-tabs-prev').click(function() {
                     var next = current_tab > 0 ? current_tab - 1 : items.length - 1;
                     jQuery(items[next]).trigger(eventActivator);
                     blank = true;
                 });
 
-                el.find('.gk-tabs-next').click(function () {
+                el.find('.gk-tabs-next').click(function() {
                     var next = current_tab < amount - 1 ? current_tab + 1 : 0;
                     jQuery(items[next]).trigger(eventActivator);
                     blank = true;
@@ -142,7 +141,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                 var time_start = 0;
                 var swipe_state = false;
 
-                tabs_wrapper.bind('touchstart', function (e) {
+                tabs_wrapper.bind('touchstart', function(e) {
                     swipe_state = true;
                     var touches = e.originalEvent.changedTouches || e.originalEvent.touches;
 
@@ -153,7 +152,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                     }
                 });
 
-                tabs_wrapper.bind('touchmove', function (e) {
+                tabs_wrapper.bind('touchmove', function(e) {
                     var touches = e.originalEvent.changedTouches || e.originalEvent.touches;
 
                     if (touches.length > 0 && swipe_state) {
@@ -167,7 +166,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                     }
                 });
 
-                tabs_wrapper.bind('touchend', function (e) {
+                tabs_wrapper.bind('touchend', function(e) {
                     var touches = e.originalEvent.changedTouches || e.originalEvent.touches;
 
                     if (touches.length > 0 && swipe_state) {
@@ -180,8 +179,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
                                 jQuery(items[next]).trigger(eventActivator);
                                 blank = true;
                             } else {
-                                var next = current_tab < amount - 1 ? current_tab + 1 : 0;
-                                jQuery(items[next]).trigger(eventActivator);
+                                var nexttab = current_tab < amount - 1 ? current_tab + 1 : 0;
+                                jQuery(items[nexttab]).trigger(eventActivator);
                                 blank = true;
                             }
                         }

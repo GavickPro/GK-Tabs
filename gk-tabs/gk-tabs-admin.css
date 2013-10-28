@@ -24,28 +24,28 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 .gk-tabs-ui select {
-	float: right;
+    float: right;
 }
 
 .gk-tabs-ui > p {
-	border-bottom: 1px solid #e8e8e8;
-	margin: 0!important;
-	padding: 5px 0!important;
-	overflow: hidden;
+    border-bottom: 1px solid #e8e8e8;
+    margin: 0!important;
+    padding: 5px 0!important;
+    overflow: hidden;
 }
 
 .gk-tabs-ui label {
-	line-height: 2.4;
+    line-height: 2.4;
 }
 
 .gk-tabs-ui .gk-small,
 .gk-tabs-ui .gk-title {
-	float: right;
-	text-align: right;
-	width: 50px;
+    float: right;
+    text-align: right;
+    width: 50px;
 }
 
 .gk-tabs-ui .gk-title {
-	text-align: left;
-	width: 150px;
+    text-align: left;
+    width: 150px;
 }
