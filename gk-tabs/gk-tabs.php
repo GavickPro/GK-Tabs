@@ -471,7 +471,7 @@ class Gk_Tabs_Widget extends WP_Widget {
 					echo $after_title;
 				}
 				//
-				echo '<p class="gk-tabs-error"><strong>&times;</strong>'.__('You didn\'t selected any tabs source :(', 'gk-tabs').'</p>';
+				echo '<p class="gk-tabs-error"><strong>&times;</strong>'.__('You didn\'t select any tabs source :(', 'gk-tabs').'</p>';
 				// 
 				echo $after_widget;
 			}
