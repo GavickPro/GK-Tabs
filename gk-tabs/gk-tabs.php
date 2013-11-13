@@ -164,7 +164,7 @@ class Gk_Tabs_Widget extends WP_Widget {
 	 *
 	 */
 	function add_js() {
-		wp_register_script( 'gk-tabs', home_url() . '/wp-content/plugins/gk-tabs/gk-tabs.js', array('jquery'), false, true);
+		wp_register_script( 'gk-tabs', plugins_url('gk-tabs.js', __FILE__), array('jquery'), false, true);
 		wp_enqueue_script('gk-tabs');
 	}
 
@@ -183,7 +183,7 @@ class Gk_Tabs_Widget extends WP_Widget {
 		if(is_array($instances) || is_object($instances)) {
 			foreach($instances as $instance) {
 				if($instance['style'] != '' && $instance['style'] != 'none' && !in_array($instance['style'], $loaded_files)) {
-					wp_register_style( 'gk-tabs-' . $instance['style'], home_url() . '/wp-content/plugins/gk-tabs/styles/'. $instance['style'] .'.css', array(), false, 'all');
+					wp_register_style( 'gk-tabs-' . $instance['style'], plugins_url('styles/'. $instance['style'] .'.css', __FILE__), array(), false, 'all');
 					wp_enqueue_style('gk-tabs-' . $instance['style']);	
 					array_push($loaded_files, $instance['style']);
 				}
@@ -199,7 +199,7 @@ class Gk_Tabs_Widget extends WP_Widget {
 	 *
 	 */
 	function add_admin_css() {
-		wp_register_style( 'gk-tabs', home_url() . '/wp-content/plugins/gk-tabs/gk-tabs-admin.css', array(), false, 'all');
+		wp_register_style( 'gk-tabs', plugins_url('gk-tabs-admin.css', __FILE__), array(), false, 'all');
 		wp_enqueue_style('gk-tabs');
 	}
 
