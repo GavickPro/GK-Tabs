@@ -341,6 +341,10 @@ class Gk_Tabs_Widget extends WP_Widget {
 				// creating the tabs
 				$sidebars = wp_get_sidebars_widgets();
 				$widget_code = array();
+				// get the widget classes
+				$css_classes = get_option(wp_get_theme() . '_widget_style_css');
+				$css_styles = get_option(wp_get_theme() . '_widget_style');
+				$css_result = array();
 				// get the cache settings to use proper behaviour of the widget code
 				if($this->config['cache'] == 'content' && $cache_content && $this->config['cache_time'] > 0) {
 					$widget_code = $cache_content;
@@ -384,6 +388,16 @@ class Gk_Tabs_Widget extends WP_Widget {
 							// get the widget code
 							array_push($widget_code, ob_get_contents());
 							ob_end_clean();
+							
+							$css_classname = '';
+							// get the class name				
+							if(isset($css_styles[$widget]) && $css_styles[$widget] != '' && $css_styles[$widget] != 'gkcustom') {
+								$css_classname = $css_styles[$widget];
+							} elseif((isset($css_classes[$widget]) && $css_classes[$widget] != '')){	
+								$css_classname = $css_classes[$widget];
+							}
+							// put the class name to the array
+							array_push($css_result, $css_classname);
 						}
 					}
 					// store the results
@@ -420,7 +434,12 @@ class Gk_Tabs_Widget extends WP_Widget {
 					
 					echo '<ol class="gk-tabs-nav">';
 					for($i = 0; $i < count($tabs); $i++) {
-						echo '<li'.(($i == $first_tab - 1) ? ' class="active"' : '').'>' . apply_filters('gk_tabs_tab_title', $tabs[$i]) . '</li>';
+						// if the custom class exists
+						if($css_result[$i] == '') { 
+							echo '<li'.(($i == 0) ? ' class="active"' : '').'>' . apply_filters('gk_tabs_tab', $tabs[$i]) . '</li>';
+						} else {
+							echo '<li'.(($i == 0) ? ' class="active '.$css_result[$i].'"' : ' class="'.$css_result[$i].'"').'>' . $tabs[$i] . '</li>';
+						}
 					}
 					echo '</ol>';
 
