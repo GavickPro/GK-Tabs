@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /*
 
-Copyright 2013-2013 GavickPro (info@gavick.com)
+Copyright 2013-2014 GavickPro (info@gavick.com)
 
 this program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
