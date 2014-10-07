@@ -65,7 +65,7 @@ function gk_tabs_load_textdomain() {
  *  wiget initialization and adding additional sidebars
  */
 add_action( 'widgets_init', 'gk_tabs_register' );
-add_action( 'wp_loaded', array('Gk_Tabs_Widget', 'register_sidebars'));
+add_action( 'wp_loaded', array('GK_Tabs', 'register_sidebars'));
 
 /**
  * Register the GK Tabs Widget.
@@ -73,21 +73,21 @@ add_action( 'wp_loaded', array('Gk_Tabs_Widget', 'register_sidebars'));
  * Hooks into the widgets_init action.
  */
 function gk_tabs_register() {
-	register_widget( 'Gk_Tabs_Widget' );
+	register_widget( 'GK_Tabs' );
 }
 
 /**
  * install & uninstall
  */
-register_activation_hook( __FILE__, array( 'Gk_Tabs_Widget', 'install' ) );
-register_deactivation_hook( __FILE__, array( 'Gk_Tabs_Widget', 'uninstall' ) );
+register_activation_hook( __FILE__, array( 'GK_Tabs', 'install' ) );
+register_deactivation_hook( __FILE__, array( 'GK_Tabs', 'uninstall' ) );
 
 /**
  *
  * Main widget class
  *
  */
-class Gk_Tabs_Widget extends WP_Widget {
+class GK_Tabs extends WP_Widget {
 	// storage of the widget settings with default values
 	private $config = array(
 								'title' 				=> '',
@@ -231,7 +231,7 @@ class Gk_Tabs_Widget extends WP_Widget {
 		for($i = 1; $i <= $amount_of_sidebars; $i++) {
 			register_sidebar(
 				array(
-					'name'          => 'GK Tabs ' . Gk_Tabs_Widget::roman_number($i),
+					'name'          => 'GK Tabs ' . GK_Tabs::roman_number($i),
 					'id'            => 'gk-tabs-sidebar-' . $i,
 					'description'   => '',
 			        'class'         => '',
