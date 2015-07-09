@@ -436,7 +436,7 @@ class GK_Tabs extends WP_Widget {
 				if($this->config['tabs_position'] == 'top') {
 					do_action('gk_tabs_before_tabs_list');
 					
-					echo '<ol class="gk-tabs-nav">';
+					echo '<ol class="gk-tabs-nav" data-amount="'. count($tabs) .'">';
 					for($i = 0; $i < count($tabs); $i++) {
 						// if the custom class exists
 						if($css_result[$i] == '') { 
@@ -464,7 +464,7 @@ class GK_Tabs extends WP_Widget {
 				if($this->config['tabs_position'] == 'bottom') {
 					do_action('gk_tabs_before_tabs_list');
 
-					echo '<ol class="gk-tabs-nav">';
+					echo '<ol class="gk-tabs-nav" data-amount="'. count($tabs) .'">';
 					for($i = 0; $i < count($tabs); $i++) {
 						echo '<li'.(($i == $first_tab - 1) ? ' class="active"' : '').'>' . apply_filters('gk_tabs_tab_title', $tabs[$i]) . '</li>';
 					}
