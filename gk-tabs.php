@@ -115,15 +115,14 @@ class GK_Tabs extends WP_Widget {
 	 * @return void
 	 *
 	 **/
+
 	function __construct() {
-		$this->WP_Widget(
-			'gk_tabs', 
-			__( 'Tabs by GavickPro', 'gk-tabs' ), 
-			array( 
-				'classname' => 'widget_gk_tabs', 
-				'description' => __( 'Use this widget to show tabs created form the selected sidebar', 'gk-tabs') 
-			)
-		);
+		$widget_ops = array(
+					'classname' => 'widget_gk_tabs', 
+					'description' => __( 'Use this widget to show tabs created form the selected sidebar', 'gk-tabs')
+					);
+
+		parent::__construct('gk_tabs', __( 'Tabs by GavickPro', 'gk-tabs' ), $widget_ops );
 		
 		$this->alt_option_name = 'gk_tabs';
 		//
