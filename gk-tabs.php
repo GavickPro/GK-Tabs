@@ -4,7 +4,7 @@
 Plugin Name: GK Tabs
 Plugin URI: http://www.gavick.com/
 Description: Widget for the tabs interface display
-Version: 1.0
+Version: 1.0.1
 Author: GavickPro
 Author URI: http://www.gavick.com/
 License: GPLv2 or later
