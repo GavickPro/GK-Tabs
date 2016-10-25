@@ -185,7 +185,7 @@ class GK_Tabs extends WP_Widget {
 
 		if(is_array($instances) || is_object($instances)) {
 			foreach($instances as $instance) {
-				if($instance['style'] != '' && $instance['style'] != 'none' && !in_array($instance['style'], $loaded_files)) {
+				if(!empty($instance['style']) && $instance['style'] != '' && $instance['style'] != 'none' && !in_array($instance['style'], $loaded_files)) {
 					wp_register_style( 'gk-tabs-' . $instance['style'], plugins_url('styles/'. $instance['style'] .'.css', __FILE__), array(), false, 'all');
 					wp_enqueue_style('gk-tabs-' . $instance['style']);	
 					array_push($loaded_files, $instance['style']);
@@ -219,7 +219,7 @@ class GK_Tabs extends WP_Widget {
 		$amount_of_sidebars = 0;
 		if(is_array($option) && count($option) > 0) {
 			foreach($option as $tabs_widget_instance) {
-				if($tabs_widget_instance['amount_of_sidebars'] > $amount_of_sidebars) {
+				if(!empty($tabs_widget_instance['amount_of_sidebars']) && ($tabs_widget_instance['amount_of_sidebars'] > $amount_of_sidebars)) {
 					$amount_of_sidebars = $tabs_widget_instance['amount_of_sidebars'];
 				}
 			}
